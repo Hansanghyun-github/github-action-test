@@ -13,7 +13,11 @@ jobs:
     - run: ls -al
     - run: uname -a
     - run: mkdir dd
-    - run: cd dd
-    - run: touch fdsfs
+    - run: |
+        cd dd
+        touch fdsfs
+        ls -al
+        pwd
     - run: ls -al
+    - run: pwd
       
