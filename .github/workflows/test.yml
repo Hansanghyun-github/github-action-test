@@ -10,19 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: ls -al
-    - run: uname -a
-    - run: mkdir dd
-    - run: |
-        cd dd
-        touch fdsfs
-        ls -al
-        pwd
-    - run: ls -al
-    - run: pwd
-    - run: echo -e "\nvar=${{ secrets.TEST_VARIABLE }}" >> .bash_profiles
-    - run: ls -al
-    - run: cat .bash_profiles
-    - run: source .bash_profiles
-    - run: echo "${var}"
+    - run: if [ $var -e 12 ]; then echo "equal"; else echo "not equal"; fi
+      env:
+        var: ${{ TEST_VARIABLE }}
       
