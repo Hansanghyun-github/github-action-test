@@ -20,7 +20,9 @@ jobs:
         pwd
     - run: ls -al
     - run: pwd
-    - run: sudo echo -e "\nvar=${{ secrets.TEST_VARIABLE }}" >> .bash_profiles
+    - run: echo -e "\nvar=${{ secrets.TEST_VARIABLE }}" >> .bash_profiles
+    - run: ls -al
+    - run: cat .bash_profiles
     - run: source .bash_profiles
     - run: echo "${var}"
       
