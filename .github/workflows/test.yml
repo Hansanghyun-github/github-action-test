@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: if [ $var -e 12 ]; then echo "equal"; else echo "not equal"; fi
+    - run: if [ $var -eq 12 ]; then echo "equal"; else echo "not equal"; fi
       env:
         var: ${{ secrets.TEST_VARIABLE }}
       
