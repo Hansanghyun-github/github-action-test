@@ -15,5 +15,4 @@ jobs:
     - run: ./test.sh
       env:
         var: ${{ secrets.TEST_VARIABLE }}
-    - run: ./test.sh
       
