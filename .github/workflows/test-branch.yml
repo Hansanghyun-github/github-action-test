@@ -1,0 +1,23 @@
+
+on:
+  push:
+    branches: [ "test" ]
+  pull_request:
+    branches: [ "test" ]
+
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: ssh to ec2
+      uses: appleboy/ssh-action@master
+      with:
+        key: ${{ secrets.TEST_SSH_PRIVATE_KEY }}
+        host: ${{ secrets.TEST_HOST }}
+        username: ${{ secrets.TEST_USER }}
+        script: |
+          whatEC2
+          current_date=$(date +%Y-%m-%d)
+          touch "$current_date"
+          mkdir test-dir
