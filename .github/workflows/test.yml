@@ -21,4 +21,5 @@ jobs:
     - name: Get Public IP
       id: ip
       uses: haythem/public-ip@v1.3
-      
+    - name: Get Public IP using ipconfig
+      run: curl ifconfig.me
