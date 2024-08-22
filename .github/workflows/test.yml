@@ -17,4 +17,8 @@ jobs:
     - run: ./test.sh
       env:
         var: ${{ secrets.TEST_VARIABLE }}
+    # GitHub Actions VM 환경의 IP를 받아온다.
+    - name: Get Public IP
+      id: ip
+      uses: haythem/public-ip@v1.3
       
