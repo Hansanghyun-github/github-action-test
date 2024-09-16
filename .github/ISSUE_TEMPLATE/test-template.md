@@ -1,6 +1,6 @@
 ---
-name: 
-about: 
+name: test template
+about: sub content
 title: ''
 labels: enhancement
 assignees: ''
