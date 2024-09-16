@@ -9,3 +9,5 @@ else
 fi
 
 echo "test finished"
+
+echo "test sh end"
